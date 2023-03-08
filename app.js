@@ -9,10 +9,13 @@ const helmet = require('helmet'); //add
 const bodyParser = require('body-parser'); //add
 const monk = require('monk'); //add
 
+
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
 
 var app = express();
+
+const cors = require('cors');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +23,7 @@ app.set('view engine', 'jade');
 
 require('dotenv').config(); //add
 
+app.use(cors());
 app.use(helmet()); //add
 app.use(morgan('dev')); //add
 app.use(bodyParser.json()); //add

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-let product = require('../models/producto');
-
+let product = require('./productModel');
 
 const ProductoEsquema = new mongoose.Schema({
  id: {
